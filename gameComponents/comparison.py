@@ -1,32 +1,37 @@
-from gameComponents import gameVars
+from gameComponents import gameVars, chooseWinner, comparison 
+from random import randint
 
+def comparison(status):
 
-def comparison (status):
+	computer = gameVars.weapons[randint(0,2)]
+	
+	print("Auto chose: " + computer)
 
-	if (game.computer == game.player):
+	
+	if (computer == gameVars.player):
 				print("tie")
 
 	#always check for negative conditions
-	elif (game.computer == "rock"):
-		if (game.player == "scissors"):
+	elif (computer == "rock"):
+		if (gameVars.player == "scissors"):
 			print("you got hit by a rock...somehow!")
-			game.player_lives -= 1
+			gameVars.player_lives -= 1
 		else:
 			print("you win!")
-			game.ai_lives -= 1
+			gameVars.ai_lives -= 1
 
-	elif (game.computer == "paper"):
-		if (game.player == "rock"):
+	elif (computer == "paper"):
+		if (gameVars.player == "rock"):
 			print("AI Rex smacks you with a stack of files!")
-			game.player_lives -= 1
+			gameVars.player_lives -= 1
 		else:
 			print("you win")
-			game.ai_lives -= 1
+			gameVars.ai_lives -= 1
 
-	elif (game.computer == "scissors"):
-		if (game.player == "paper"):
+	elif (computer == "scissors"):
+		if (gameVars.player == "paper"):
 			print("oof! AI Rex pinches your arm")
-			game.player_lives -= 1
+			gameVars.player_lives -= 1
 		else:
 			print("you win")
-			game.ai_lives -= 1
+			gameVars.ai_lives -= 1
